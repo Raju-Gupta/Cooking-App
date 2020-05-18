@@ -75,6 +75,7 @@ class EditProfileViewController: UIViewController {
             btnGender.setTitle(userData["gender"] as? String, for: .normal)
         }
         imgProfileImage.image = userData["avtar"] as? UIImage
+        btnUpdate.alpha = 1
     }
     
 }
@@ -142,7 +143,6 @@ extension EditProfileViewController: UITextViewDelegate{
 extension EditProfileViewController{
     
     func textFieldValidation(){
-        btnUpdate.alpha = 1
         TextFieldHelper.textValidation(txt: txtName, regex: RegExManager.nameRegex, error: ErrorMessages.nameError, errorLabel: lblError)
         TextFieldHelper.textValidation(txt: txtMobile, regex: RegExManager.phoneRegex, error: ErrorMessages.phoneError, errorLabel: lblError)
         
